@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <title>Error-Filled Page</title>
+
+</head>
+<body>
+
+    <h1> Welcome to My Error-Filled Page </h1>
+    
+    <p> This is a paragraph with mismatched tags and missing closing tags.</p> 
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+        <li>Item 6</li>
+        <li>Item 7</li>
+        <li>Item 8</li>
+        <li>Item 9</li>
+        <li>Item 10</li>
+    </ol>
+
+    <p> This is another paragraph without proper indentation. </p>
+    
+    <img src="image.jpg">  <!-- Error 9: no alt text -->
+
+    <a href="https://www.example.com" target="_blank">Click me!</img>  <!-- Error 10: incorrect closing tag -->
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>25<td>      <!-- Error 11: closing tag incorrectly formatted -->
+        </tr>
+        <tr>
+            <td>Jane</td>
+            <td>30</td>
+        </tr>
+
+     <!-- Error 12: incorrect closing tag -->
+    
+    <img source="error.jpeg" alt="Error Image">  <!-- Error 13: "source" needs to be "src" -->
+
+    <center>This is centered text.</center>  <!-- Error 14: the centered tag is no longer supported in html -->
+
+    <p bgcolor="lightgray">Text</p>  <!-- Error 15: "bgcolor="lightgray"" needs changed to "style="background-color:lightgray;" -->
+
+    <input type="button" value="Click me">
+
+    <!-- This is an unclosed comment --> <!-- Error 16: was an unclosed comment -->
+
+    <a href="#">Link without closing tag <!-- Error 17: unclosed a tag -->
+
+    <p><em>Underlined text</p></em> <!-- Error 18: incorrect nesting rules -->
+
+    <dl>
+        <li>Descriptive Item Title</li> <!-- Error 19: li needs to be dt -->
+        <li>Descriptive Item Text</li> <!-- Error 20: li needs to be dd -->
+    </dl>
+
+    <!-- Errors Described -->
+
+    <ol>
+
+        <li>Error: No DOCTYPE determined<br>
+            Fix: Added "!DOCTYPE html" (with closing brackets) to the first line of the code
+        </li>
+        <li>Error: html tag called twice, leaving the "lang" undefined (in the first call) and the tag, incorrectly, called in the head<br>
+            Fix: Added "lang='en'" to the html tag in the second line of code and delete the html tag in the head
+        </li>
+        <li>Error: No charset determined<br>
+            Fix: Added a meta tag in the head that defines the charset
+        </li>
+        <li>Error: Head tag not closed<br>
+            Fix: Added the proper closing tag for the head just before the opening tag for the body 
+        </li>
+        <li>Error: Heading 1 tag not closed<br>
+            Fix: Added the proper h1 closing tag after the heading text
+        </li>
+        <li>Error: Paragraph tag not opened<br>
+            Fix: Added the proper opening tag for the paragraph before the paragraph text
+        </li>
+        <li>Error: The "ol" opening tag and the "ul" closing tag do not match<br>
+            Fix: Changed the "ul" closing tag to the proper "ol" closing tag
+        </li>
+        <li>Error: Paragraph tag not closed<br>
+            Fix: Added the proper paragraph closing tag after the paragraph text
+        </li>
+        <li>Error: No alt text in image<br>
+            Fix: Added the alt text ""
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+        <li>Error: <br>
+            Fix:
+        </li>
+
+
+    </ol>
+
+</body>
+</html>
