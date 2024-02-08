@@ -27,9 +27,9 @@
 
     <p> This is another paragraph without proper indentation. </p>
     
-    <img src="image.jpg">  <!-- Error 9: no alt text -->
+    <img src="image.jpg" alt="An image with the title 'The two states of every programmer' including a picture on the left displaying a sci-fi space pilot with the caption 'I am a god.' and a picture on the right displaying a dog sitting at a household computer with the caption 'I have no idea what I am doing.'">
 
-    <a href="https://www.example.com" target="_blank">Click me!</img>  <!-- Error 10: incorrect closing tag -->
+    <a href="https://www.example.com" target="_blank">Click me!</a>
 
     <table>
         <tr>
@@ -38,32 +38,32 @@
         </tr>
         <tr>
             <td>John</td>
-            <td>25<td>      <!-- Error 11: closing tag incorrectly formatted -->
+            <td>25</td>
         </tr>
         <tr>
             <td>Jane</td>
             <td>30</td>
         </tr>
 
-     <!-- Error 12: incorrect closing tag -->
+    </table>
     
-    <img source="error.jpeg" alt="Error Image">  <!-- Error 13: "source" needs to be "src" -->
+    <img src="error.jpeg" alt="An image of Dwight from The Office staring deadface at the camera with the caption 'Website is done! False. A website is never 'done.'">
 
-    <center>This is centered text.</center>  <!-- Error 14: the centered tag is no longer supported in html -->
+    <p style="text-align:center">This is centered text.</p>
 
-    <p bgcolor="lightgray">Text</p>  <!-- Error 15: "bgcolor="lightgray"" needs changed to "style="background-color:lightgray;" -->
+    <p style="background-color:lightgray;">Text</p>
 
     <input type="button" value="Click me">
 
-    <!-- This is an unclosed comment --> <!-- Error 16: was an unclosed comment -->
+    <!-- This is an unclosed comment -->
 
-    <a href="#">Link without closing tag <!-- Error 17: unclosed a tag -->
+    <a href="#">Link without closing tag</a>
 
-    <p><em>Underlined text</p></em> <!-- Error 18: incorrect nesting rules -->
+    <p><em>Underlined text</em></p>
 
     <dl>
-        <li>Descriptive Item Title</li> <!-- Error 19: li needs to be dt -->
-        <li>Descriptive Item Text</li> <!-- Error 20: li needs to be dd -->
+        <dt>Descriptive Item Title</dt>
+        <dd>Descriptive Item Text</dd>
     </dl>
 
     <!-- Errors Described -->
@@ -95,40 +95,40 @@
             Fix: Added the proper paragraph closing tag after the paragraph text
         </li>
         <li>Error: No alt text in image<br>
-            Fix: Added the alt text ""
+            Fix: Added the alt text "An image with the title 'The two states of every programmer' including a picture on the left displaying a sci-fi space pilot with the caption 'I am a god.' and a picture on the right displaying a dog sitting at a household computer with the caption 'I have no idea what I am doing.'"
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The "a" opening tag and the "img" closing tag do not match<br>
+            Fix: Changed the "img" closing tag to the proper "a" closing tag
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: In the second row of the table, the closing tag for "25" is missing its "/" <br>
+            Fix: Added the "/" to make it into a proper closing tag
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: Table tag not closed<br>
+            Fix: Added the proper table closing tag after the table data
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The "source=" in the img tag needs to be "src=" instead and the alt text needs to be more descriptive to be accessible<br>
+            Fix: Changed "source" to say "src" and changed the alt text to say "An image of Dwight from The Office staring deadface at the camera with the caption 'Website is done! False. A website is never 'done.'"
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The centered tag is no longer supported in html 5<br>
+            Fix: Replaced the center tags with paragraph tags and add "style="text-align:center" into the opening tag
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The p tag no longer supports "bgcolor=" in html 5<br>
+            Fix: Replaced "bgcolor="lightgray"" with "style="background-color:lightgray;""
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The comment needs to be closed<br>
+            Fix: Added the proper closing tag to the comment
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: a tag not closed<br>
+            Fix: Added the proper a closing tag after the data
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: The "em" and "p" tags are nested incorrectly<br>
+            Fix: Moved the closing p tag to the outside of the closing em tag
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: For a descriptive item title in a descriptive item list, you need to use dt tags instead of li tags<br>
+            Fix: Replaced the li tags with the coresponding dt tags
         </li>
-        <li>Error: <br>
-            Fix:
+        <li>Error: For descriptive item text in a descriptive item list, you need to use dd tags instead of li tags<br>
+            Fix: Replaced the li tags with the coresponding dd tags
         </li>
 
 
