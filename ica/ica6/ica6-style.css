@@ -39,3 +39,19 @@
   }
   
   /* Your CSS below here */
+
+  article {
+
+    border-top: 1mm solid red;
+    border-bottom: 1mm solid red;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.2)), url("ica6_top_image.png") no-repeat left top, url("ica6_bottom_image.png") no-repeat left bottom;
+    background-color: white;
+
+  }
+
+  h1 {
+
+    background: url("ica6_logo.png");
+    filter: drop-shadow(3px 3px 3px black);
+
+  }
