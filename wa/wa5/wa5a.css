@@ -16,9 +16,20 @@ html {
     width: 35em;
     height: 22em;
     margin: 5em auto;
-    background-color: red;
     border: 0.2em solid black;
     border-radius: 1.5em;
+}
+
+.chris .card {
+
+    background-color: red;
+
+}
+
+.genevieve .card {
+
+    background-color: gray;
+
 }
 
 h2, p {
@@ -72,7 +83,18 @@ h2, p {
 .card article {
 
     height: 12em;
+
+}
+
+.chris .card article {
+
     background-color: rgba(0,0,0,.25);
+
+}
+
+.genevieve .card article {
+
+    background-color: rgba(178, 134, 44, 0.25);
 
 }
 
