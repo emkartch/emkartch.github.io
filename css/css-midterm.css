@@ -1,0 +1,126 @@
+body {
+
+    background-color: black;
+    color: #21B24B;
+    font-family: "din-2014", sans-serif;
+
+}
+
+.show-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+
+}
+
+/* Code for basic Window Tab */
+
+    .window-bar {
+        background-color: black;
+        border: 3px solid white;
+        width: 390px;
+        height: 30px;
+        padding: 10px;
+        margin: 5px;
+        margin-bottom: 0px;
+    }
+
+    .collapse-toggle {
+        display: none;
+    }
+
+    .collapse-toggle:checked ~ .window-content {
+        height: 0;
+        overflow: hidden;
+        color: black
+    }
+
+    .window-bar span,
+    .window-bar label {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .window-content {
+        width: 390px;
+        height: 200px;
+        background-color: black;
+        border-bottom: 3px solid white;
+        border-right: 3px solid white;
+        border-left: 3px solid white;
+        position: relative;
+        overflow: hidden;
+        padding: 10px;
+        margin: 5px;
+        margin-top: 0px;
+        
+    }
+
+    .close-btn, .minimize-btn, .maximize-btn {
+        color: white;
+    }
+
+    .close-btn {
+        font-size: 20px;
+    }
+
+    .minimize-btn {
+        font-size: 18px;
+    }
+
+    .maximize-btn {
+        font-size: 25px;
+    }
+
+    .minimize-btn:hover {
+        color: #21B24B;
+    }
+
+    .minimize-btn, .maximize-btn {
+        font-family: Arial, sans-serif;
+    }
+
+/* Code for basic Window Tab (Phone size) */
+
+    @media screen and (max-width: 500px) {
+
+        .window-bar {
+            background-color: black;
+            border: 3px solid white;
+            width: 290px;
+            height: 30px;
+            padding: 10px;
+            margin: 5px;
+            margin-bottom: 0px;
+        }
+
+        .window-content {
+            width: 300px;
+            height: 200px;
+            background-color: black;
+            border-bottom: 3px solid white;
+            border-right: 3px solid white;
+            border-left: 3px solid white;
+            position: relative;
+            overflow: hidden;
+            padding: 5px;
+            margin: 5px;
+            margin-top: 0px;
+            
+        }
+
+        .close-btn {
+            font-size: 20px;
+        }
+    
+        .minimize-btn {
+            font-size: 18px;
+        }
+    
+        .maximize-btn {
+            font-size: 25px;
+        }
+
+    }
