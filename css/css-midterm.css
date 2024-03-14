@@ -9,42 +9,125 @@ body {
 .show-grid {
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    gap: 10px;
 
 }
 
+.heading {
+
+    font-family: "bebas-neue", sans-serif;
+    font-size: 45px;
+    margin-left: 15px;
+
+}
+
+.title {
+
+    font-family: "bebas-neue", sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+
+}
+
+.sub-heading {
+
+    font-family: "bebas-neue", sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+
+
+}
+
+
 /* Code for basic Window Tab */
+
+.window-bar {
+    background-color: black;
+    border: 3px solid white;
+    width: 390px;
+    height: 30px;
+    padding: 10px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    margin-bottom: 0px;
+}
+
+.collapse-toggle {
+    display: none;
+}
+
+.collapse-toggle:checked ~ .window-content {
+    height: 0;
+    overflow: hidden;
+    color: black
+}
+
+.window-bar span,
+.window-bar label {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.window-content {
+    width: 390px;
+    height: auto;
+    background-color: black;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 0px;
+    
+}
+
+.close-btn, .minimize-btn, .maximize-btn {
+    color: white;
+}
+
+.close-btn {
+    font-size: 30px;
+}
+
+.minimize-btn {
+    font-size: 33px;
+}
+
+.maximize-btn {
+    font-size: 40px;
+}
+
+.minimize-btn:hover {
+    color: #21B24B;
+}
+
+.minimize-btn, .maximize-btn {
+    font-family: Arial, sans-serif;
+}
+
+/* Code for basic Window Tab (Phone size) */
+
+@media screen and (max-width: 500px) {
 
     .window-bar {
         background-color: black;
         border: 3px solid white;
-        width: 390px;
+        width: 290px;
         height: 30px;
         padding: 10px;
-        margin: 5px;
+        margin: 20px;
         margin-bottom: 0px;
-    }
 
-    .collapse-toggle {
-        display: none;
-    }
-
-    .collapse-toggle:checked ~ .window-content {
-        height: 0;
-        overflow: hidden;
-        color: black
-    }
-
-    .window-bar span,
-    .window-bar label {
-        margin-right: 5px;
-        cursor: pointer;
     }
 
     .window-content {
-        width: 390px;
+        width: 300px;
         height: 200px;
         background-color: black;
         border-bottom: 3px solid white;
@@ -52,14 +135,10 @@ body {
         border-left: 3px solid white;
         position: relative;
         overflow: hidden;
-        padding: 10px;
-        margin: 5px;
+        padding: 5px;
+        margin: 20px;
         margin-top: 0px;
         
-    }
-
-    .close-btn, .minimize-btn, .maximize-btn {
-        color: white;
     }
 
     .close-btn {
@@ -74,53 +153,62 @@ body {
         font-size: 25px;
     }
 
-    .minimize-btn:hover {
-        color: #21B24B;
+}
+
+
+
+
+.background {
+
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+/* Class for the numbers being displayed, most of the styling is here */
+.binary-rain {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    animation: binary-fall 5s linear infinite;
+  }
+  
+  /* This class just defines the color, font, and size of each number */
+  .binary-digit {
+    color: #0fff00;
+    font-family: monospace;
+    font-size: 24px;
+  }
+  
+  
+  /* Keyframe animation allows for the falling and fading away. You can edit the opacity and the speed of the falling here, but be careful because it's very specific with what does and doesn't work (the loop sometimes breaks with certain speeds)*/
+  @keyframes binary-fall {
+    0% {
+      opacity: 0; /* This starts with opacity 0 to make the lines fade in */
+      transform: translateY(-50px);
     }
-
-    .minimize-btn, .maximize-btn {
-        font-family: Arial, sans-serif;
+    20% {
+      opacity: 1; /* Fade in the lines */
     }
-
-/* Code for basic Window Tab (Phone size) */
-
-    @media screen and (max-width: 500px) {
-
-        .window-bar {
-            background-color: black;
-            border: 3px solid white;
-            width: 290px;
-            height: 30px;
-            padding: 10px;
-            margin: 5px;
-            margin-bottom: 0px;
-        }
-
-        .window-content {
-            width: 300px;
-            height: 200px;
-            background-color: black;
-            border-bottom: 3px solid white;
-            border-right: 3px solid white;
-            border-left: 3px solid white;
-            position: relative;
-            overflow: hidden;
-            padding: 5px;
-            margin: 5px;
-            margin-top: 0px;
-            
-        }
-
-        .close-btn {
-            font-size: 20px;
-        }
-    
-        .minimize-btn {
-            font-size: 18px;
-        }
-    
-        .maximize-btn {
-            font-size: 25px;
-        }
-
+    50% {
+      opacity: 1;
+      transform: translateY(calc(50vh - 30px));
     }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh);
+    }
+  }
+  
+  .binary-rain {
+    /* this is just for the delay to work, but it was breaking as part of the main binary_rain class so I put it here */
+    animation-delay: var(--delay);
+  }
