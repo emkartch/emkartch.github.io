@@ -1,8 +1,30 @@
 body {
 
-    background-color: black;
     color: #21B24B;
     font-family: "din-2014", sans-serif;
+    background-color: black;
+
+}
+
+h1 {
+
+    font-family: "bebas-neue", sans-serif;
+    font-size: 100px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+hr.divide {
+
+    border-top: 3px solid white;
+
+}
+
+.container {
+
+    position: relative;
+    z-index: 1;
 
 }
 
@@ -160,13 +182,14 @@ body {
 
 .background {
 
-    position: absolute;
     margin: 0;
     height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    position: absolute;
+    z-index: -999;
 
 }
 
