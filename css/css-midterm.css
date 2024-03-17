@@ -1,26 +1,173 @@
+/* Main content styling */
 body {
 
-    color: #21B24B;
+    color: #0CC000;
     font-family: "din-2014", sans-serif;
+    background-color: black;
+    margin: 0;
+    padding-bottom: 130px;
+
+}
+/* Main content styling */
+
+
+/* Main content styling (Phone) */
+@media screen and (max-width: 500px) {
+
+    body {
+
+        padding-bottom: 90px;
+
+    }
+
+}
+/* Main content styling (Phone) */
+
+
+
+
+/* Header content styling */
+.header {
+
     background-color: black;
 
 }
 
-h1 {
+.page-title {
 
-    font-family: "bebas-neue", sans-serif;
-    font-size: 100px;
+    padding: 20px;
     text-align: center;
-    margin: 10px;
+    color: #0FFF00;
+    font-family: "bebas-neue", sans-serif;
+    border-bottom: 3px solid white;
 
 }
 
-hr.divide {
+.header-title {
 
-    border-top: 3px solid white;
+    font-size: 90px;
 
 }
 
+.sub-header-title {
+
+    font-size: 80px;
+
+}
+
+.summary {
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-bottom: 3px solid white;
+    margin-bottom: 10px;
+}
+/* Header content styling */
+
+
+/* Header content styling (Phone) */
+@media screen and (max-width: 500px) {
+
+    .header-title {
+
+        font-size: 50px;
+    
+    }
+    
+    .sub-header-title {
+    
+        font-size: 45px;
+    
+    }
+
+    .summary {
+        font-size: 16px;
+    }
+
+}
+/* Header content styling (Phone) */
+
+
+
+
+/* Background content styling */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.binary-rain-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    padding: 0 5%;
+}
+
+.binary-rain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.binary-digit {
+    color: black;
+    font-family: "din-2014-narrow", monospace;
+    font-size: 24px;
+    margin-bottom: 20px; 
+}
+
+.binary-rain span {
+    animation: binary-fall 10s linear infinite;
+    display: block;
+}
+
+@keyframes binary-fall {
+    0% {
+        opacity: 0; /* This starts with opacity 0 to make the lines fade in */
+        transform: translateY(-100vh);
+        color: #0fff00;
+    }
+    20% {
+        opacity: 1; /* Fade in the lines */
+        color: #0fff00;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(calc(100vh - 30px));
+        color: #0fff00;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(200vh);
+        color: #0fff00;
+    }
+}
+
+.binary-rain:nth-child(even) span {
+    animation-delay: var(--delay);
+}
+/* Background content styling */
+
+
+
+
+/* Main container content styling */
 .container {
 
     position: relative;
@@ -37,34 +184,6 @@ hr.divide {
 
 }
 
-.heading {
-
-    font-family: "bebas-neue", sans-serif;
-    font-size: 45px;
-    margin-left: 15px;
-
-}
-
-.title {
-
-    font-family: "bebas-neue", sans-serif;
-    font-size: 25px;
-    letter-spacing: 3px;
-
-}
-
-.sub-heading {
-
-    font-family: "bebas-neue", sans-serif;
-    font-size: 20px;
-    letter-spacing: 3px;
-
-
-}
-
-
-/* Code for basic Window Tab */
-
 .window-bar {
     background-color: black;
     border: 3px solid white;
@@ -76,37 +195,6 @@ hr.divide {
     align-items: center;
     margin: 20px;
     margin-bottom: 0px;
-}
-
-.collapse-toggle {
-    display: none;
-}
-
-.collapse-toggle:checked ~ .window-content {
-    height: 0;
-    overflow: hidden;
-    color: black
-}
-
-.window-bar span,
-.window-bar label {
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.window-content {
-    width: 390px;
-    height: auto;
-    background-color: black;
-    border-bottom: 3px solid white;
-    border-right: 3px solid white;
-    border-left: 3px solid white;
-    position: relative;
-    overflow: hidden;
-    padding: 10px;
-    margin: 20px;
-    margin-top: 0px;
-    
 }
 
 .close-btn, .minimize-btn, .maximize-btn {
@@ -122,116 +210,135 @@ hr.divide {
 }
 
 .maximize-btn {
-    font-size: 40px;
-}
-
-.minimize-btn:hover {
-    color: #21B24B;
+    font-size: 38px;
+    margin-left: 4px;
 }
 
 .minimize-btn, .maximize-btn {
     font-family: Arial, sans-serif;
 }
 
-/* Code for basic Window Tab (Phone size) */
+.heading {
 
+    font-family: "bebas-neue", sans-serif;
+    font-size: 45px;
+    margin-left: 15px;
+    color: #0EE000;
+
+}
+
+.window-content {
+    width: 390px;
+    height: auto;
+    background-color: black;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 0px;
+}
+
+.title {
+    font-family: "bebas-neue", sans-serif;
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: #0DD000;
+}
+
+.sub-heading {
+    font-family: "bebas-neue", sans-serif;
+    font-size: 25px;
+    letter-spacing: 10px;
+    color: #0DD000;
+}
+/* Main container content styling */
+
+
+/* Main container content styling (Phone) */
 @media screen and (max-width: 500px) {
 
-    .window-bar {
-        background-color: black;
-        border: 3px solid white;
-        width: 290px;
-        height: 30px;
-        padding: 10px;
-        margin: 20px;
-        margin-bottom: 0px;
-
+    .show-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 
+    .window-bar {
+        width: 300px;
+    }
+    
+    .close-btn {
+        font-size: 26px;
+    }
+    
+    .minimize-btn {
+        font-size: 29px;
+    }
+    
+    .maximize-btn {
+        font-size: 36px;
+    }
+    
+    .heading {
+        font-size: 38px;
+    }
+    
     .window-content {
         width: 300px;
-        height: 200px;
-        background-color: black;
-        border-bottom: 3px solid white;
-        border-right: 3px solid white;
-        border-left: 3px solid white;
-        position: relative;
-        overflow: hidden;
-        padding: 5px;
-        margin: 20px;
-        margin-top: 0px;
-        
-    }
-
-    .close-btn {
-        font-size: 20px;
-    }
-
-    .minimize-btn {
-        font-size: 18px;
-    }
-
-    .maximize-btn {
-        font-size: 25px;
     }
 
 }
+/* Main container content styling (Phone) */
 
 
 
 
-.background {
-
-    margin: 0;
-    height: 100vh;
-    display: flex;
+/* Footer content styling */
+.footer {
     justify-content: space-between;
+    background-color: black;
     align-items: center;
-    overflow: hidden;
-    position: absolute;
-    z-index: -999;
-
+    display: flex;
+    border-top: 3px solid white;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+    z-index: 20;
+    font-size: 35px;
 }
 
-/* Class for the numbers being displayed, most of the styling is here */
-.binary-rain {
-    width: 33.33%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    animation: binary-fall 5s linear infinite;
-  }
-  
-  /* This class just defines the color, font, and size of each number */
-  .binary-digit {
-    color: #0fff00;
-    font-family: monospace;
-    font-size: 24px;
-  }
-  
-  
-  /* Keyframe animation allows for the falling and fading away. You can edit the opacity and the speed of the falling here, but be careful because it's very specific with what does and doesn't work (the loop sometimes breaks with certain speeds)*/
-  @keyframes binary-fall {
-    0% {
-      opacity: 0; /* This starts with opacity 0 to make the lines fade in */
-      transform: translateY(-50px);
+.dates {
+    font-family: "din-2014-narrow", sans-serif;
+    color: #0EE000;
+}
+
+.nav-button {
+    font-family: "din-2014-narrow", sans-serif;
+    color: #0EE000;
+    border: 3px solid white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+a[href$="page-title"] {
+    color: #0EE000;
+}
+/* Footer content styling */
+
+
+/* Footer content styling (Phone) */
+@media screen and (max-width: 500px) {
+
+    .footer {
+        font-size: 22px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
-    20% {
-      opacity: 1; /* Fade in the lines */
-    }
-    50% {
-      opacity: 1;
-      transform: translateY(calc(50vh - 30px));
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(100vh);
-    }
-  }
-  
-  .binary-rain {
-    /* this is just for the delay to work, but it was breaking as part of the main binary_rain class so I put it here */
-    animation-delay: var(--delay);
-  }
+
+}
+/* Footer content styling (Phone) */
