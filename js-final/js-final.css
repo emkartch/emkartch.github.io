@@ -7,6 +7,7 @@
 body {
 
     min-width: 800px;
+    height: 100vh;
 
 }
 
@@ -18,7 +19,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: red;
+    background: #46351D;
 
 }
 
@@ -31,14 +32,15 @@ body {
 h2 {
 
     font-size: 45px;
+    color: #DFE9DF;
 
 }
 
 #gameCanvas {
-    background: white;
+    background: #DFE9DF;
     display: block;
     margin: 0 auto;
-    border: 3px solid rgb(166, 155, 155);
+    border: 3px solid #839D9A;
 }
 
 #volumeCanvas {
@@ -50,4 +52,9 @@ h2 {
 
 button {
     display: block;
-  }
+    background: #839D9A;
+    font-size: 30px;
+    color: #DFE9DF;
+    margin: 10px;
+    margin-left: 0px;
+}
