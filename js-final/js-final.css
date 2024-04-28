@@ -1,0 +1,53 @@
+/*Canvas Setup*/
+
+* {
+    margin: 0px;
+}
+
+body {
+
+    min-width: 800px;
+
+}
+
+.container {
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: red;
+
+}
+
+.game, .volume {
+
+    margin: 10px;
+
+}
+
+h2 {
+
+    font-size: 45px;
+
+}
+
+#gameCanvas {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid rgb(166, 155, 155);
+}
+
+#volumeCanvas {
+    background: #000000;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid rgb(166, 155, 155);
+}
+
+button {
+    display: block;
+  }
