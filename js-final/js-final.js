@@ -26,12 +26,31 @@
     var volumeText = document.querySelector('#volumeNum');
     var volumeNum = 0;
 
+
+    var volumeArray = [1,1,1,1,2,2,2,2,3,3,4,5,6,7,8,9,10,10,11,12];
+
+    const removeRandom = (array) => {
+        //while(array.length){
+           const random = Math.floor(Math.random() * array.length);
+           const el = array.splice(random, 1)[0];
+           //console.log(el);
+           return el;
+        //}
+     };
+
+
+
+
+
+
+
+
     let bricks = [];
 
     for (let c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
     for (let r = 0; r < brickRowCount; r++) {
-        bricks[c][r] = { x: 0, y: 0, status: 1};
+        bricks[c][r] = { x: 0, y: 0, status: 1, text: removeRandom(volumeArray)};
     }
     }
 
@@ -76,7 +95,7 @@
             ) {
                 dy = -dy;
                 b.status = 0;
-                volumeNum += 4;
+                volumeNum += b.text;
                 volumeText.textContent = String(volumeNum);
                 if (volumeNum === 100) {
                     alert("Volume Set: 100")
@@ -111,6 +130,8 @@
             const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
             bricks[c][r].x = brickX;
             bricks[c][r].y = brickY;
+
+
             ctx.beginPath();
             ctx.rect(brickX, brickY, brickWidth, brickHeight);
             ctx.fillStyle = "#646F4B";
@@ -118,7 +139,7 @@
 
             ctx.font = "12pt Arial";
             ctx.fillStyle = "#DFE9DF";
-            ctx.fillText("4", brickX+6, brickY+20);
+            ctx.fillText(String(bricks[c][r].text), brickX+6, brickY+20);
 
             ctx.closePath();
             }
@@ -143,7 +164,7 @@
             dy = -dy;
             } else {
             alert("Volume Set: " + String(volumeNum));
-            document.location.reload();
+            window.location.reload();
             }
         }
 

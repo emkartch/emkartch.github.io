@@ -8,6 +8,7 @@ body {
 
     min-width: 800px;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
@@ -26,6 +27,12 @@ body {
 .game, .volume {
 
     margin: 10px;
+
+}
+
+.volume {
+
+    text-align: center;
 
 }
 
