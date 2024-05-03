@@ -50,12 +50,12 @@ h2 {
     border: 3px solid #839D9A;
 }
 
-#volumeCanvas {
+/* #volumeCanvas {
     background: #000000;
     display: block;
     margin: 0 auto;
     border: 3px solid rgb(166, 155, 155);
-}
+} */
 
 button {
     display: block;

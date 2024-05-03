@@ -38,7 +38,10 @@
         //}
      };
 
-
+    
+    function reload() {
+        document.location.reload();
+    }
 
 
 
@@ -99,7 +102,8 @@
                 volumeText.textContent = String(volumeNum);
                 if (volumeNum === 100) {
                     alert("Volume Set: 100")
-                    document.location.reload();
+                    //document.location.reload();
+                    reload();
                 }
 
             }
@@ -139,6 +143,8 @@
 
             ctx.font = "12pt Arial";
             ctx.fillStyle = "#DFE9DF";
+            //ctx.textAlign = "center";
+            //ctx.textBaseline = "middle";
             ctx.fillText(String(bricks[c][r].text), brickX+6, brickY+20);
 
             ctx.closePath();
@@ -153,7 +159,7 @@
         drawBall();
         drawPaddle();
         collisionDetection();
-
+    
         if (x + dx > gameCanvas.width - ballRadius || x + dx < ballRadius) {
             dx = -dx;
         }
@@ -161,29 +167,41 @@
             dy = -dy;
         } else if (y + dy > gameCanvas.height - ballRadius) {
             if (x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+                dy = -dy;
             } else {
-            alert("Volume Set: " + String(volumeNum));
-            window.location.reload();
+                //this checks if the game is actually over
+                if (!gameOver) {
+                    gameOver = true; //sets the flag for game over to true
+                    handleGameLost(); //calls handleGameLost() function
+                }
             }
         }
-
+    
         if (rightPressed) {
             paddleX += 7;
             if (paddleX + paddleWidth > gameCanvas.width) {
-            paddleX = gameCanvas.width - paddleWidth;
+                paddleX = gameCanvas.width - paddleWidth;
             }
         } else if (leftPressed) {
             paddleX -= 7;
             if (paddleX < 0) {
-            paddleX = 0;
+                paddleX = 0;
             }
         }
-
+    
         x += dx;
         y += dy;
-
+    
         requestAnimationFrame(draw);
+    }
+    
+    //add a flag to track game over condition
+    let gameOver = false;
+    
+    //handle game lost function
+    function handleGameLost() {
+        alert("Volume Set: " + String(volumeNum));
+        window.location.reload(); // force reload once, the issue was it was double reloading and failing the first one
     }
 
 // GAME CONTROLS
