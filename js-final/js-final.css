@@ -8,8 +8,7 @@ body {
 
     min-width: 800px;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: monospace;
 }
 
 .container {
@@ -20,7 +19,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background: #46351D;
+    background: black;
 
 }
 
@@ -39,29 +38,23 @@ body {
 h2 {
 
     font-size: 45px;
-    color: #DFE9DF;
+    color: white;
 
 }
 
 #gameCanvas {
-    background: #DFE9DF;
+    background: black;
     display: block;
     margin: 0 auto;
-    border: 3px solid #839D9A;
+    border: 3px solid white;
 }
-
-/* #volumeCanvas {
-    background: #000000;
-    display: block;
-    margin: 0 auto;
-    border: 3px solid rgb(166, 155, 155);
-} */
 
 button {
     display: block;
-    background: #839D9A;
+    background: gray;
     font-size: 30px;
-    color: #DFE9DF;
+    font-family: monospace;
+    color: white;
     margin: 10px;
     margin-left: 0px;
 }
